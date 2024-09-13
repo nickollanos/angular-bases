@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })
+
 export class HeroComponent {
 
   public name:  string = 'Tony Stark';

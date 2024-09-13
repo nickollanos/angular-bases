@@ -1,0 +1,32 @@
+<h4>LISTADO</h4>
+<ul class="list-group">
+
+  <!--index = Indice-->  <!--isFirts = primer dato-->
+  <!--isLast = ultimo dato-->  <!--isEven = par-->
+  <!--isOdd = impar-->
+  <li *ngFor="let personaje of personajeList;
+  let i = index;
+  let isFirst = first;
+  let isLast = last;
+  let isEven = even;
+  let isOdd = odd;"
+  class="list-group-item d-flex justify-content-between align-items-center"
+  [ngClass]="{
+    'list-group-item-success' : isEven
+  }">
+
+  <div>
+    <span class="text-primary"> {{ i + 1 }}. </span>
+    <span> {{ personaje.nombre }} - </span>
+    <strong>poder: </strong>
+    <span>{{ personaje.poder }}</span>
+  </div>
+
+  <button
+  class="btn btn-danger"
+  (click)="onDeletePersonaje( personaje.id )"
+  ><i class="fa-solid fa-trash"></i></button>
+
+    <!-- <span>Es impar: {{ isOdd }}</span> -->
+  </li>
+</ul>
